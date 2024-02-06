@@ -1,0 +1,7 @@
+{
+  "name": "Reeve",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
