@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { logoFacebook, logoTwitter, logoSnapchat, logoInstagram, logoDiscord, logoWhatsapp, logoPlaystation, logoXbox, logoSteam, logoTiktok} from 'ionicons/icons';
+import { logoFacebook, logoTwitter, logoSnapchat, logoInstagram, logoDiscord, logoWhatsapp, logoPlaystation, logoXbox, logoSteam, logoTiktok, lockClosed, lockClosedOutline, key, phonePortrait, pulse, school, thumbsUp, warning} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -20,6 +20,58 @@ interface AppPage {
   mdIcon: string;
   title: string;
 }
+
+const infoPages: AppPage[] = [
+  {
+    title: 'Privacy',
+    url: '/privacy',
+    iosIcon: lockClosed,
+    mdIcon: lockClosed
+  },
+  {
+    title: 'Reputation Management',
+    url: '/reputation-management',
+    iosIcon: thumbsUp,
+    mdIcon: thumbsUp
+  },
+  {
+    title: 'Counteract Crowding and Fatigue',
+    url: '/crowding-fatigue',
+    iosIcon: pulse,
+    mdIcon: pulse
+  },
+  {
+    title: 'Strong Passwords',
+    url: '/strong-passwords',
+    iosIcon: key,
+    mdIcon: key
+  },
+  {
+    title: 'Two-Factor Authentication (2FA)',
+    url: '/two-factor-authentication',
+    iosIcon: lockClosedOutline,
+    mdIcon: lockClosedOutline
+  },
+  {
+    title: 'Avoid Suspicious Links',
+    url: '/suspicious-links',
+    iosIcon: warning,
+    mdIcon: warning
+  },
+  {
+    title: 'Keep Devices Updated',
+    url: '/device-updates',
+    iosIcon: phonePortrait,
+    mdIcon: phonePortrait
+  },
+  {
+    title: 'Educate Yourself and Family',
+    url: '/education',
+    iosIcon: school,
+    mdIcon: school
+  }
+];
+
 
 const socialPages: AppPage[] = [
   {
@@ -94,6 +146,20 @@ const Menu: React.FC = () => {
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
+
+      <IonList id="inbox-list">
+          <IonListHeader>Information</IonListHeader>
+          {infoPages.map((appPage, index) => {
+            return (
+              <IonMenuToggle key={index} autoHide={false}>
+                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                  <IonLabel>{appPage.title}</IonLabel>
+                </IonItem>
+              </IonMenuToggle>
+            );
+          })}
+        </IonList>
 
       <IonList id="inbox-list">
           <IonListHeader>Socials Medias</IonListHeader>
