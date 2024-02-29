@@ -17,7 +17,6 @@ import {
   shieldCheckmarkOutline,
   eyeOffOutline,
 } from "ionicons/icons";
-import "../Page.css"; // Import CSS file for additional styling
 
 const PrivacyPage: React.FC = () => {
   return (

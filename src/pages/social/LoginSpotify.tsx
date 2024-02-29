@@ -5,7 +5,7 @@ import axios from 'axios';
 const LoginSpotify = () => {
   const handleLogin = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/auth/spotify');
+      const response = await axios.get('http://localhost:3000/spotify/auth');
       window.location.href = response.data.redirect;
     } catch (error) {
       console.error('Login failed:', error);

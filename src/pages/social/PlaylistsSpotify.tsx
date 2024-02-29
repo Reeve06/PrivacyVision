@@ -24,7 +24,7 @@ import {
   lockOpenOutline,
   linkOutline,
   playOutline,
-  logOutOutline, // Corrected import name
+  logOutOutline, 
 } from "ionicons/icons";
 import PlaylistVisibilityModal from "./PlaylistVisibilityModal";
 
@@ -64,7 +64,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.get<{ body: User }>("http://localhost:3000/user/profile", {
+      const response = await axios.get<{ body: User }>("http://localhost:3000/spotify/user/profile", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -77,7 +77,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
 
   const handleFetchPlaylists = async () => {
     try {
-      const response = await axios.get<Playlist[]>("http://localhost:3000/playlists", {
+      const response = await axios.get<Playlist[]>("http://localhost:3000/spotify/playlists", {
         headers: {
           Authorization: `Bearer ${accessToken}`,
         },
@@ -98,7 +98,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
       };
 
       await axios.put(
-        `http://localhost:3000/playlist/${selectedPlaylist.id}/visibility`,
+        `http://localhost:3000/spotify/playlist/${selectedPlaylist.id}/visibility`,
         {
           isPublic: updatedPlaylist.public,
         }
@@ -194,7 +194,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
               <IonImg
                 src={playlist.images[0].url}
                 slot="start"
-                style={{ width: "80px" }}
+                style={{ width: "100px" }}
               />
               <IonLabel>
                 <h1>{playlist.name}</h1>
@@ -232,7 +232,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
               <IonButton
                 fill="clear"
                 color="danger"
-                onClick={() => handleDeletePlaylist(playlist.id)}
+                onClick={() => {}}
               >
                 Delete
               </IonButton>

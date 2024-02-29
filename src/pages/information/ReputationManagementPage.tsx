@@ -16,7 +16,6 @@ import {
   lockClosedOutline,
   shieldCheckmarkOutline,
 } from "ionicons/icons";
-import "../Page.css";
 
 const ReputationManagementPage: React.FC = () => {
   return (

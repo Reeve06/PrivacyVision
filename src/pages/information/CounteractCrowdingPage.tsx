@@ -17,8 +17,6 @@ import {
   shieldCheckmarkOutline,
   eyeOffOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
-import "../Page.css"; 
 
 const CounteractCrowdingPage: React.FC = () => {
   return (
