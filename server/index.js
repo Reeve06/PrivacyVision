@@ -13,8 +13,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(session({ secret: 'bob', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(cors());
-
+app.use(
+  cors({
+      origin: '*',
+      methods: "GET, POST, PATCH, DELETE, PUT",
+      allowedHeaders: "Content-Type, Authorization",
+     })
+  );
 
 // Set up routes under /spotify
 app.use('/spotify', spotifyRoutes);

@@ -33,39 +33,39 @@ passport.deserializeUser((obj, done) => {
 // Routes
 
 // Authentication route
-router.get('/auth',
+const spotifyAuthStrategy = passport.authenticate('spotify', {
+  scope: [
+    'ugc-image-upload',
+    'user-read-playback-state',
+    'user-modify-playback-state',
+    'user-read-currently-playing',
+    'playlist-read-private',
+    'playlist-modify-public',
+    'playlist-read-collaborative',
+    'playlist-modify-private',
+    'user-library-read',
+    'user-library-modify',
+    'user-top-read',
+    'user-read-playback-position',
+    'user-read-recently-played',
+    'user-follow-read',
+    'user-follow-modify',
+    'user-read-email',
+    'user-read-private',
+  ],
+  showDialog: true
+});
+
+// Proxy route for Spotify authentication
+router.get('/auth', spotifyAuthStrategy);
+
+// Callback route for Spotify authentication
+router.get('/auth/callback', (req, res, next) => {
   passport.authenticate('spotify', {
-    scope: [
-        'ugc-image-upload',
-        'user-read-playback-state',
-        'user-modify-playback-state',
-        'user-read-currently-playing',
-        'playlist-read-private',
-        'playlist-modify-public',
-        'playlist-read-collaborative',
-        'playlist-modify-private',
-        'user-library-read',
-        'user-library-modify',
-        'user-top-read',
-        'user-read-playback-position',
-        'user-read-recently-played',
-        'user-follow-read',
-        'user-follow-modify',
-        'user-read-email',
-        'user-read-private',
-      ],
-    showDialog: true
-  })
-);
-
-// Authentication callback route
-router.get('/auth/callback',
-  passport.authenticate('spotify', { failureRedirect: '/' }),
-  (req, res) => {
-    res.redirect('/playlists');
-  }
-);
-
+    successRedirect: 'http://localhost:8100/social/spotify/playlists',
+    failureRedirect: '/login' 
+  })(req, res, next);
+});
 // Logout route
 router.get('/logout', (req, res) => {
   req.logout(); 
