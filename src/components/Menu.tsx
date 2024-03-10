@@ -11,7 +11,7 @@ import {
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { logoFacebook, logoTwitter, logoSnapchat, logoInstagram, logoDiscord, logoWhatsapp, logoPlaystation, logoXbox, logoSteam, logoTiktok, lockClosed, lockClosedOutline, key, phonePortrait, pulse, school, thumbsUp, warning} from 'ionicons/icons';
+import { logoFacebook, logoTwitter, logoSnapchat, logoInstagram, logoDiscord, logoWhatsapp, logoPlaystation, logoXbox, logoSteam, logoTiktok, lockClosed, lockClosedOutline, key, phonePortrait, pulse, school, thumbsUp, warning, musicalNote} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -74,6 +74,12 @@ const infoPages: AppPage[] = [
 
 
 const socialPages: AppPage[] = [
+  {
+    title: 'Spotify',
+    url: '/social/spotify/login',
+    iosIcon: musicalNote,
+    mdIcon: musicalNote
+  },
   {
     title: 'Facebook',
     url: '/social/facebook',
