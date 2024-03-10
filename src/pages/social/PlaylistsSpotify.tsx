@@ -154,10 +154,10 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         {user && (
           <IonRow>
             <IonCol className="ion-text-center">
-              <IonImg
+              { user.images.length >0 && <IonImg
                 src={user.images[1].url}
                 style={{ width: "200px", margin: "0 auto", display: "block" }}
-              />
+              /> }
               <IonTitle>{user.display_name}</IonTitle>
               <IonCardSubtitle>
                 {" "}
@@ -198,11 +198,11 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         <IonList>
           {playlists.map((playlist) => (
             <IonItem key={playlist.id}>
-              <IonImg
+             { playlist.images[0] && <IonImg
                 src={playlist.images[0].url}
                 slot="start"
                 style={{ width: "100px" }}
-              />
+              /> }
               <IonLabel>
                 <h1>{playlist.name}</h1>
                 <div dangerouslySetInnerHTML={{ __html: playlist.description }} />
