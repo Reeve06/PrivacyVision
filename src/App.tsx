@@ -30,8 +30,8 @@ import TwoFactorAuthPage from './pages/information/TwoFactorAuthPage';
 import DeviceUpdatesPage from './pages/information/DeviceUpdatesPage';
 import EducationPage from './pages/information/EducationPage';
 import SuspiciousLinksPage from './pages/information/SuspiciousLinksPage';
-import LoginSpotify from './pages/social/LoginSpotify';
-import PlaylistsPage from './pages/social/PlaylistsSpotify';
+import LoginSpotify from './pages/social/spotify/LoginSpotify';
+import PlaylistsPage from './pages/social/spotify/PlaylistsSpotify';
 
 setupIonicReact();
 

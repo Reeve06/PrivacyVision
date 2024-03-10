@@ -27,6 +27,7 @@ import {
   logOutOutline, 
 } from "ionicons/icons";
 import PlaylistVisibilityModal from "./PlaylistVisibilityModal";
+import SpotifyWidget from "./TrackSpotify";
 
 interface User {
   display_name: string;
@@ -195,6 +196,9 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         </IonRow>
       </IonHeader>
       <IonContent>
+
+        {/* <SpotifyWidget/> */}
+
         <IonList>
           {playlists.map((playlist) => (
             <IonItem key={playlist.id}>
