@@ -140,7 +140,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
   const showToastMessage = (message: string) => {
     setToastMessage(message);
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 2000); // Hide the toast after 2 seconds
+    setTimeout(() => setShowToast(false), 2000);
   };
 
   return (
@@ -177,6 +177,13 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
                 }
               >
                 Open in Browser
+              </IonButton>
+              <IonButton
+                onClick={() =>
+                  window.open("https://www.spotify.com/uk/account/overview/", "_blank")
+                }
+              >
+                Open Profile Settings
               </IonButton>
             </IonCol>
           </IonRow>
