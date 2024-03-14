@@ -36,7 +36,7 @@ const EducationPage: React.FC = () => {
             <IonIcon icon={lockClosedOutline} slot="start" />
             <IonLabel>
               <h2>
-                <IonTitle>Safeguard Personal Information</IonTitle>
+                <IonTitle>Educate Yourself and Family</IonTitle>
               </h2>
               <p>
                 <IonTitle>
@@ -46,49 +46,44 @@ const EducationPage: React.FC = () => {
               <ul>
                 <li>
                   <IonTitle>
-                    Identity theft: Sharing personal information like addresses,
-                    birthdates, and phone numbers makes you vulnerable to
-                    identity theft, where someone uses your information for
-                    fraudulent purposes.
+                  Empowerment through Knowledge:
+                   Understanding online risks empowers you to make informed decisions.
+                   Awareness helps you recognise and avoid potential dangers.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Targeted scams: Knowing your details, scammers can craft
-                    personalized phishing attempts or exploit them for targeted
-                    advertising.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                    Data breaches: Platforms can experience data breaches,
-                    exposing your information to unauthorized access.
+                  Protecting:
+                    By educating your family, you create a safer digital environment for everyone.
+                    Children and teenagers benefit from learning responsible online behavior.
                   </IonTitle>
                 </li>
               </ul>
               <p>
                 <IonTitle>
-                  <strong>Action:</strong>
+                  <strong>Protective Actions:</strong>
                 </IonTitle>
               </p>
               <ul>
                 <li>
                   <IonTitle>
-                    Review and adjust privacy settings: Limit what information
-                    is publicly visible on each platform.
+                  <strong> Stay Informed:</strong>
+                    Current Threats: Regularly educate yourself about online threats and scams.
+                    Security Updates: Keep software, apps, and devices up to date to address vulnerabilities.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Utilize privacy tools: Many platforms offer tools to control
-                    personal data sharing and visibility.
+                  <strong>Family Conversations:</strong>
+                    Talk to Your Family: Engage in open discussions about online safety.
+                    Age-Appropriate Guidance: Tailor advice to different family members’ needs.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Be selective about what you share: Avoid sharing sensitive
-                    information like home addresses, phone numbers, financial
-                    details, etc.
+                  <strong> Encourage Responsible Behavior: </strong>
+                    Children and Teens: Teach them about privacy settings, safe browsing, and avoiding sharing personal information.
+                    Critical Thinking: Help them question suspicious requests or links.
                   </IonTitle>
                 </li>
               </ul>
@@ -103,16 +98,16 @@ const EducationPage: React.FC = () => {
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/aO858HyFbKI"
-                title="How to Stay Safe Online (Crash Course Privacy)"
+                src="https://www.youtube.com/embed/dFg6G8eMRbM?si=HVpH1X84NhMk-z5L"
+                title="Cybersecurity Awareness Training for Everyone"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/videoseries?list=PL388D1AC3B539E4F1"
-                title="Digital Identity Theft Protection and Prevention"
+                src="https://www.youtube.com/embed/yiKeLOKc1tw?si=5Xq5iW8_Sq3Yx9A9"
+                title="Talking to Kids About Online Safety"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

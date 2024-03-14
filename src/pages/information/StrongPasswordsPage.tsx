@@ -36,7 +36,7 @@ const StrongPasswordsPage: React.FC = () => {
             <IonIcon icon={lockClosedOutline} slot="start" />
             <IonLabel>
               <h2>
-                <IonTitle>Safeguard Personal Information</IonTitle>
+                <IonTitle>Strong Passwords</IonTitle>
               </h2>
               <p>
                 <IonTitle>
@@ -46,49 +46,62 @@ const StrongPasswordsPage: React.FC = () => {
               <ul>
                 <li>
                   <IonTitle>
-                    Identity theft: Sharing personal information like addresses,
-                    birthdates, and phone numbers makes you vulnerable to
-                    identity theft, where someone uses your information for
-                    fraudulent purposes.
+                  Weak or reused passwords pose significant risks to your digital security. Here’s why strong passwords are crucial:
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Targeted scams: Knowing your details, scammers can craft
-                    personalized phishing attempts or exploit them for targeted
-                    advertising.
+                  Protection Against Hacking: Hackers often exploit predictable passwords. A strong password acts as a formidable barrier against unauthorised access.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Data breaches: Platforms can experience data breaches,
-                    exposing your information to unauthorized access.
+                  Data and Account Security: Robust passwords safeguard your sensitive information,
+                   including personal data, financial details, and communication.
                   </IonTitle>
                 </li>
               </ul>
               <p>
                 <IonTitle>
-                  <strong>Action:</strong>
+                  <strong>Actions for Creating Strong Passwords:</strong>
                 </IonTitle>
               </p>
               <ul>
                 <li>
                   <IonTitle>
-                    Review and adjust privacy settings: Limit what information
-                    is publicly visible on each platform.
+                  Mix Characters: Combine uppercase and lowercase letters, numbers, and special symbols (e.g., @, #, $).
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Utilize privacy tools: Many platforms offer tools to control
-                    personal data sharing and visibility.
+                  Avoid Predictability: Refrain from using easily guessable patterns like “123456” or “password.”
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Be selective about what you share: Avoid sharing sensitive
-                    information like home addresses, phone numbers, financial
-                    details, etc.
+                  Avoid Personal Information:                 
+                  </IonTitle>
+                </li>
+                <li>
+                  <IonTitle>
+                  Birthdays or Names: Never include personal details like birthdays, names, or family member names.
+                  </IonTitle>
+                </li>  
+                 <li>
+                  <IonTitle>
+                  Common Words: Avoid dictionary words or phrases.
+                  </IonTitle>
+                </li>
+                <li>
+                  <IonTitle>
+                  Password Manager Consideration:
+                  </IonTitle>
+                </li>
+
+                <li>
+                  <IonTitle>               
+                  Use a Password Manager: Tools like LastPass, 1Password, 
+                  or the built-in password manager in Google Chrome securely store and manage your passwords.
                   </IonTitle>
                 </li>
               </ul>
@@ -103,16 +116,16 @@ const StrongPasswordsPage: React.FC = () => {
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/aO858HyFbKI"
-                title="How to Stay Safe Online (Crash Course Privacy)"
+                src="https://www.youtube.com/embed/TvrFpAFitQ0?si=CybBMbWYDON0-XkO"
+                title="Password Basics: How to Create a Strong Password"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/videoseries?list=PL388D1AC3B539E4F1"
-                title="Digital Identity Theft Protection and Prevention"
+                src="https://www.youtube.com/embed/3-vn3vcfi2M?si=tE4tIUkQ0lfuJON5"
+                title="Password Manager Overview"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

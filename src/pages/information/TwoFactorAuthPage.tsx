@@ -36,33 +36,36 @@ const TwoFactorAuthPage: React.FC = () => {
             <IonIcon icon={lockClosedOutline} slot="start" />
             <IonLabel>
               <h2>
-                <IonTitle>Safeguard Personal Information</IonTitle>
+                <IonTitle>Two-Factor Authentication 2FA</IonTitle>
               </h2>
+              <p> <IonTitle> Two-Factor Authentication (2FA), 
+                  also known as multi-factor authentication (MFA) or two-step verification, 
+                  is a security mechanism that requires two separate forms of identification 
+                  before granting access to an account or service. The goal is to enhance 
+                  security beyond relying solely on a password.
+                  </IonTitle>
+              </p>
               <p>
                 <IonTitle>
-                  <strong>Why It Matters:</strong>
+                  <strong>Why It Matters:</strong>                 
                 </IonTitle>
               </p>
               <ul>
                 <li>
                   <IonTitle>
-                    Identity theft: Sharing personal information like addresses,
-                    birthdates, and phone numbers makes you vulnerable to
-                    identity theft, where someone uses your information for
-                    fraudulent purposes.
+                  2FA adds an extra layer of security by requiring a second verification step, like a code sent to your phone, after entering your password.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Targeted scams: Knowing your details, scammers can craft
-                    personalized phishing attempts or exploit them for targeted
-                    advertising.
+                  Enhanced Security: By combining two factors, 2FA provides a more robust defense against unauthorised access.
+                   It ensures that even if someone obtains your password, they still need an additional piece of information to gain entry
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Data breaches: Platforms can experience data breaches,
-                    exposing your information to unauthorized access.
+                  Mitigating Password Vulnerabilities: Traditional passwords can be compromised due to weak choices, 
+                  reuse, or data breaches. 2FA mitigates these vulnerabilities by adding an extra layer of verification.
                   </IonTitle>
                 </li>
               </ul>
@@ -74,24 +77,43 @@ const TwoFactorAuthPage: React.FC = () => {
               <ul>
                 <li>
                   <IonTitle>
-                    Review and adjust privacy settings: Limit what information
-                    is publicly visible on each platform.
+                  <strong> Mobile Apps:</strong>                  
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Utilize privacy tools: Many platforms offer tools to control
-                    personal data sharing and visibility.
+                  Use your mobile device to generate unique codes (tokens).                   
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Be selective about what you share: Avoid sharing sensitive
-                    information like home addresses, phone numbers, financial
-                    details, etc.
+                  These codes are sent via SMS and verified on websites or apps.
                   </IonTitle>
                 </li>
               </ul>
+              <p>
+                <IonTitle>
+                  <strong>Advantages:</strong>
+                </IonTitle>
+              </p>
+              <ul>
+                <li>
+                  <IonTitle>
+                  No need for a separate hardware token generator.                 
+                  </IonTitle>
+                </li>
+                <li>
+                  <IonTitle>
+                  Passcode generators are efficient and secure.
+                  </IonTitle>
+                </li>
+                <li>
+                  <IonTitle>
+                  Max passcode entry prevents hacking
+                  </IonTitle>
+                </li>
+              </ul>
+
             </IonLabel>
           </IonItem>
           <IonItem>
@@ -103,16 +125,16 @@ const TwoFactorAuthPage: React.FC = () => {
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/aO858HyFbKI"
-                title="How to Stay Safe Online (Crash Course Privacy)"
+                src="https://www.youtube.com/embed/AMOtB7XkTT4?si=2FqplY3ov6WQlmJ2"
+                title="What is Two-Factor Authentication (2FA)?"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/videoseries?list=PL388D1AC3B539E4F1"
-                title="Digital Identity Theft Protection and Prevention"
+                src="https://www.youtube.com/embed/2ZLnBx8Mm40?si=6JocGliH9vxLT21i"
+                title="How to Enable 2FA on Different Platforms"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>

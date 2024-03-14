@@ -16,7 +16,7 @@ import {
   lockClosedOutline,
   shieldCheckmarkOutline,
 } from "ionicons/icons";
-
+import Menu from "../../components/Menu";
 const ReputationManagementPage: React.FC = () => {
   return (
     <IonPage>
@@ -25,7 +25,7 @@ const ReputationManagementPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Privacy Management: Why It Matters</IonTitle>
+          <IonTitle>Importance of Privacy on Online Social Media</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
@@ -33,43 +33,35 @@ const ReputationManagementPage: React.FC = () => {
           <IonItem lines="none">
             <IonIcon icon={lockClosedOutline} slot="start" />
             <IonLabel>
-              <h2>Importance of Privacy on Online Social Media</h2>
+            <IonTitle><h2>Reputation Management</h2></IonTitle>
               <p>
-                <strong>Why It Matters:</strong>
+              <IonTitle> <strong>Why It Matters:</strong></IonTitle>
               </p>
               <ul>
                 <li>
-                  Identity theft: Sharing personal information like addresses,
-                  birthdates, and phone numbers makes you vulnerable to
-                  identity theft, where someone uses your information for
-                  fraudulent purposes.
+                <IonTitle>	Potential employers: Social media profiles
+                   are often screened by potential employers, 
+                  and inappropriate content can hurt your chances.</IonTitle>
                 </li>
                 <li>
-                  Targeted scams: Knowing your details, scammers can craft
-                  personalized phishing attempts or exploit them for targeted
-                  advertising.
+                <IonTitle>Relationships: Posts can create misunderstandings or offend others, damaging relationships.</IonTitle>
                 </li>
                 <li>
-                  Data breaches: Platforms can experience data breaches,
-                  exposing your information to unauthorized access.
+                <IonTitle>Personal brand: Social media is an extension of your personal brand, and consistent, positive content reflects well on you.</IonTitle>
                 </li>
               </ul>
               <p>
-                <strong>Action:</strong>
+              <IonTitle><strong>Action:</strong></IonTitle>
               </p>
               <ul>
                 <li>
-                  Review and adjust privacy settings: Limit what information is
-                  publicly visible on each platform.
+                <IonTitle> Be mindful of your posts: Consider the potential impact of your content before sharing.</IonTitle>
                 </li>
                 <li>
-                  Utilize privacy tools: Many platforms offer tools to control
-                  personal data sharing and visibility.
+                <IonTitle> Review past posts: Regularly review and delete old posts that might not reflect your current self or goals.</IonTitle>
                 </li>
                 <li>
-                  Be selective about what you share: Avoid sharing sensitive
-                  information like home addresses, phone numbers, financial
-                  details, etc.
+                <IonTitle>Maintain privacy for sensitive content: Share personal experiences with close friends and family using private groups or messages.</IonTitle>
                 </li>
               </ul>
             </IonLabel>
@@ -77,13 +69,13 @@ const ReputationManagementPage: React.FC = () => {
           <IonItem lines="none">
             <IonIcon icon={shieldCheckmarkOutline} slot="start" />
             <IonLabel>
-              <h3>YouTube Links:</h3>
+            <IonTitle> <h3>YouTube Links:</h3></IonTitle>
               <div className="video-container">
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/VCoyZ8lKDZI"
-                  title="Managing Your Online Reputation"
+                  src="https://www.youtube.com/embed/D7A-yYztCig?si=Iwl3xUgC1IZefP7a"
+                  title="The Dark Side of Social Media - Impact on Our Livesn"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
@@ -92,8 +84,8 @@ const ReputationManagementPage: React.FC = () => {
                 <iframe
                   width="560"
                   height="315"
-                  src="https://www.youtube.com/embed/aO858HyFbKI"
-                  title="The Dark Side of Social Media - Impact on Our Lives"
+                  src="https://www.youtube.com/embed/7_iVgqgXzi8?si=_ANEkAiYmV569aMg"
+                  title="Managing Your Online Reputation"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>

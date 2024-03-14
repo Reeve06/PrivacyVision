@@ -36,7 +36,7 @@ const SuspiciousLinksPage: React.FC = () => {
             <IonIcon icon={lockClosedOutline} slot="start" />
             <IonLabel>
               <h2>
-                <IonTitle>Safeguard Personal Information</IonTitle>
+                <IonTitle>Avoid Suspicious Links</IonTitle>
               </h2>
               <p>
                 <IonTitle>
@@ -46,49 +46,52 @@ const SuspiciousLinksPage: React.FC = () => {
               <ul>
                 <li>
                   <IonTitle>
-                    Identity theft: Sharing personal information like addresses,
-                    birthdates, and phone numbers makes you vulnerable to
-                    identity theft, where someone uses your information for
-                    fraudulent purposes.
+                  Phishing Attempts: Malicious links often lead to fake websites that impersonate legitimate services 
+                  (like banks or email providers). These sites trick you into revealing sensitive information, 
+                  such as passwords or credit card details.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Targeted scams: Knowing your details, scammers can craft
-                    personalized phishing attempts or exploit them for targeted
-                    advertising.
+                  Malware Infections: Clicking a harmful link can download malware onto your device.
+                   Malware can steal your data, damage files, or even take control of your system.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Data breaches: Platforms can experience data breaches,
-                    exposing your information to unauthorized access.
+                  Website Redirects: Some links redirect you to fraudulent websites or pop-ups. 
+                  These sites may prompt you to install malicious software or enter personal information.
                   </IonTitle>
                 </li>
               </ul>
               <p>
                 <IonTitle>
-                  <strong>Action:</strong>
+                  <strong>Protective Actions:</strong>
                 </IonTitle>
               </p>
               <ul>
                 <li>
                   <IonTitle>
-                    Review and adjust privacy settings: Limit what information
-                    is publicly visible on each platform.
+                  View before clicking: When you receive an email or message with a link, hover your cursor over it. 
+                  The actual URL will appear (usually at the bottom left of your screen). Verify that it matches the expected domain.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Utilize privacy tools: Many platforms offer tools to control
-                    personal data sharing and visibility.
+                  Avoid shortened links: Be cautious with shortened URLs (like bit.ly).
+                   They hide the true destination. If you’re unsure, don’t click.
                   </IonTitle>
                 </li>
                 <li>
                   <IonTitle>
-                    Be selective about what you share: Avoid sharing sensitive
-                    information like home addresses, phone numbers, financial
-                    details, etc.
+                  Verify Unsolicited Links: Even if a link seems to come 
+                  from a familiar source (like a friend or colleague), exercise caution.
+                  </IonTitle>
+                </li>
+                <li>
+                  <IonTitle>
+                  Contact the sender: Before clicking, verify with the sender that they intentionally shared the link. 
+                  Cybercriminals can compromise accounts and send malicious messages.
                   </IonTitle>
                 </li>
               </ul>
@@ -103,16 +106,16 @@ const SuspiciousLinksPage: React.FC = () => {
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/aO858HyFbKI"
-                title="How to Stay Safe Online (Crash Course Privacy)"
+                src="https://www.youtube.com/embed/o0btqyGWIQw?si=Fy2VpN7ysSiNcytz"
+                title="How to Spot Phishing Emails"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
               <iframe
                 width="560"
                 height="315"
-                src="https://www.youtube.com/embed/videoseries?list=PL388D1AC3B539E4F1"
-                title="Digital Identity Theft Protection and Prevention"
+                src="https://www.youtube.com/embed/aO858HyFbKI?si=rouB586lhiUTLy2d"
+                title="Staying Safe Online: Avoiding Phishing Scams"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               ></iframe>
