@@ -23,11 +23,11 @@ const StrongPasswordsPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+      <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>{" "}
-          <IonTitle>Importance of Privacy on Online Social Media</IonTitle>
+          <IonTitle>Strong Passwords</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

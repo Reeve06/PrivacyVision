@@ -26,7 +26,7 @@ const CounteractCrowdingPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Importance of Privacy on Online Social Media</IonTitle>
+          <IonTitle>Counteract Crowding and Fatigue</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

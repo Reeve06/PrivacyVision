@@ -25,7 +25,7 @@ const ReputationManagementPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Importance of Privacy on Online Social Media</IonTitle>
+          <IonTitle>Reputation Mangement</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

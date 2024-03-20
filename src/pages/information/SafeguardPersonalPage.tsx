@@ -26,7 +26,7 @@ const SafeguardPersonalPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Importance of Privacy on Online Social Media</IonTitle>
+          <IonTitle>Safeguard Personal Information</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>

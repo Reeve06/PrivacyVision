@@ -202,11 +202,12 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         <IonList>
           {playlists.map((playlist) => (
             <IonItem key={playlist.id}>
-             { playlist.images[0] && <IonImg
-                src={playlist.images[0].url}
+               <IonImg
+                src={playlist.images[0] ? playlist.images[0].url : 'http://localhost:8100' + '/spotify_logo.png'}
+              
                 slot="start"
                 style={{ width: "100px" }}
-              /> }
+              /> 
               <IonLabel>
                 <h1>{playlist.name}</h1>
                 <div dangerouslySetInnerHTML={{ __html: playlist.description }} />

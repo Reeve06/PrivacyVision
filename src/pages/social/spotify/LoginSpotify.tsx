@@ -1,6 +1,6 @@
-// LoginPage.jsx
-import { IonButton, IonContent, IonPage } from '@ionic/react';
+import { IonContent, IonPage } from '@ionic/react';
 import axios from 'axios';
+import "./page.css";
 
 const LoginSpotify = () => {
   const handleLogin = async () => {
@@ -13,8 +13,13 @@ const LoginSpotify = () => {
 
   return (
     <IonPage>
-      <IonContent>
-        <IonButton expand="block" onClick={handleLogin}>Login with Spotify</IonButton>
+      <IonContent fullscreen className="login-content">
+        <div className="centered-content">
+          <div className="spotify-logo-container">
+            <img onClick={handleLogin} src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/168px-Spotify_logo_without_text.svg.png" alt="Spotify Logo" className="spotify-logo" />
+            <p className="sync-message">Click to sync your Spotify account</p>
+          </div>
+        </div>
       </IonContent>
     </IonPage>
   );
