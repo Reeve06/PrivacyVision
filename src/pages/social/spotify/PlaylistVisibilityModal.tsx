@@ -22,7 +22,8 @@ const PlaylistVisibilityModal: React.FC<Props> = ({ isOpen, playlist, onConfirm,
   return (
     <IonModal isOpen={isOpen}>
       <IonHeader>
-        <IonToolbar>
+                <IonToolbar color="primary">
+
           <IonTitle>Confirm Visibility Change</IonTitle>
         </IonToolbar>
       </IonHeader>

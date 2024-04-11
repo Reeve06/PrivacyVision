@@ -9,48 +9,16 @@ import {
   IonToolbar,
   IonCard,
   IonCardHeader,
-  IonCardSubtitle,
-  IonCardTitle,
   IonCardContent,
   IonButton,
   IonImg,
   IonRow,
   IonCol,
+  IonCardTitle,
 } from "@ionic/react";
-import "./Page.css";
 import { image } from "ionicons/icons";
+import SafetyPoint from "../../../components/SafetyPoint";
 
-const SafetyPoint: React.FC<{
-  title: string;
-  description: string;
-  theImage: string;
-}> = ({ title, description, theImage }) => {
-  return (
-    <>
-      <IonCard>
-        <IonCardContent>
-          <IonRow>
-            <IonCol size="1">
-              <IonImg
-                src={theImage}
-                alt="Safety Point Image"
-                style={{ width: "100px", height: "100px" }}
-              />
-            </IonCol>
-            <IonCol>
-              <IonCardHeader>
-                <IonCardTitle>{title}</IonCardTitle>
-              </IonCardHeader>
-              <IonCardContent>
-                <p>{description}</p>
-              </IonCardContent>
-            </IonCol>
-          </IonRow>
-        </IonCardContent>
-      </IonCard>
-    </>
-  );
-};
 
 const SnapChat: React.FC = () => {
   const openSnapchatWebsite = () => {
@@ -68,16 +36,12 @@ const SnapChat: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+                <IonToolbar color="primary">
+
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
             <IonRow className="ion-align-items-center ion-text-center">
-              <IonImg
-                src={"https://1000logos.net/wp-content/uploads/2017/08/Snapchat-Logo-2013.png"}
-                alt="Safety Point Image"
-                style={{ width: "100px", height: "100px" }}
-              />
               <IonTitle>SnapChat</IonTitle>
             </IonRow>
           </IonToolbar>

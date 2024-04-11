@@ -2,30 +2,6 @@
     margin: 20px;
 }
 
-.profile-image::part(image) {
-    border-radius: 365px;
-    border: 10px solid;
-    background-clip: padding-box;
-    transition: transform 0.2s ease;
-    color: #000;
-}
-
-.profile-image::part(image):hover {
-    transform: scale(1.05);
-}
-
-.profile-image::part(image):hover::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: url('https://cdn.discordapp.com/attachments/412738197349597185/1208196005670158366/626197_pInkSuS8.png?ex=65e26736&is=65cff236&hm=71e9d3aa5d67a729fab970df0f295171b86527258d7a6cdd2470400466b2aa70&');
-    background-size: cover;
-    z-index: -1;
-}
-
 .video-container {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */

@@ -146,7 +146,8 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+                <IonToolbar color="primary">
+
           <IonTitle>Spotify Playlists - Logged in as: {user?.display_name}</IonTitle>
           <IonButton slot="end" onClick={handleLogout}>
             <IonIcon slot="icon-only" icon={logOutOutline} />

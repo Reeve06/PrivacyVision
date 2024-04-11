@@ -17,7 +17,6 @@ import {
   shieldCheckmarkOutline,
   eyeOffOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
 
 const TwoFactorAuthPage: React.FC = () => {
   return (
