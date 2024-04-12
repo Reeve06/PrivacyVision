@@ -18,6 +18,7 @@ import {
   eyeOffOutline,
 } from "ionicons/icons";
 import Menu from "../../components/Menu";
+import PasswordStrengthPage from "../PasswordChecker";
 
 const StrongPasswordsPage: React.FC = () => {
   return (
@@ -37,6 +38,7 @@ const StrongPasswordsPage: React.FC = () => {
             <IonLabel>
               <h2>
                 <IonTitle>Strong Passwords</IonTitle>
+                
               </h2>
               <p>
                 <IonTitle>
@@ -105,6 +107,7 @@ const StrongPasswordsPage: React.FC = () => {
                   </IonTitle>
                 </li>
               </ul>
+             
             </IonLabel>
           </IonItem>
           <IonItem>
@@ -131,8 +134,15 @@ const StrongPasswordsPage: React.FC = () => {
               ></iframe>
             </IonLabel>
           </IonItem>
+
+         
         </IonList>
+ 
+        <PasswordStrengthPage/>  
+
+ 
       </IonContent>
+       
     </IonPage>
   );
 };
