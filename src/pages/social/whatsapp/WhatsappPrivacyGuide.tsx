@@ -50,7 +50,7 @@ const WhatsAppPrivacyGuide: React.FC = () => {
         <SafetyPoint
           title="Last Seen and Online"
           description="Choose who can see your activity status on WhatsApp. You can control who can view when you were last seen online and your current online status."
-          theImage="https://via.placeholder.com/150"
+          theImage="https://cdn.iconscout.com/icon/free/png-512/free-last-seen-product-6013660-4983630.png?f=webp&w=512"
         />
 
         <SafetyPoint

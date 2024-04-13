@@ -61,16 +61,8 @@ const PasswordStrengthPage: React.FC = () => {
   };
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonButtons slot="start">
-            <IonMenuButton />
-          </IonButtons>
-          <IonTitle>Password Strength Checker & Generator</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
+   
+   <IonContent className="ion-padding">
         <IonGrid>
           <IonRow>
             <IonCol size="12" size-md="6">
@@ -85,7 +77,7 @@ const PasswordStrengthPage: React.FC = () => {
                       onIonChange={(e) => {
                         setPassword(e.detail.value!);
                         checkPasswordStrength(e.detail.value!);
-                      }}
+                      } }
                     ></IonInput>
                   </IonLabel>
                   <IonButton fill="clear" onClick={() => setShowPassword(!showPassword)}>
@@ -98,21 +90,16 @@ const PasswordStrengthPage: React.FC = () => {
                       <strong>Password Strength:</strong> {strength}
                     </p>
                     <IonIcon
-                      icon={
-                        strength === "Strong"
-                          ? checkmarkCircleOutline
-                          : strength === "Medium"
+                      icon={strength === "Strong"
+                        ? checkmarkCircleOutline
+                        : strength === "Medium"
                           ? refreshOutline
-                          : closeCircleOutline
-                      }
-                      color={
-                        strength === "Strong"
-                          ? "success"
-                          : strength === "Medium"
+                          : closeCircleOutline}
+                      color={strength === "Strong"
+                        ? "success"
+                        : strength === "Medium"
                           ? "warning"
-                          : "danger"
-                      }
-                    />
+                          : "danger"} />
                   </IonLabel>
                 </IonItem>
               </IonList>
@@ -137,9 +124,7 @@ const PasswordStrengthPage: React.FC = () => {
                       type="number"
                       placeholder="Password Length"
                       value={generatedPasswordLength}
-                      onIonChange={(e) =>
-                        setGeneratedPasswordLength(parseInt(e.detail.value!, 10))
-                      }
+                      onIonChange={(e) => setGeneratedPasswordLength(parseInt(e.detail.value!, 10))}
                     ></IonInput>
                   </IonLabel>
                 </IonItem>
@@ -164,7 +149,6 @@ const PasswordStrengthPage: React.FC = () => {
           </ul>
         </div>
       </IonContent>
-    </IonPage>
   );
 };
 
