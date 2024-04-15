@@ -24,7 +24,7 @@ import {
   lockOpenOutline,
   linkOutline,
   playOutline,
-  logOutOutline, 
+  logOutOutline,
 } from "ionicons/icons";
 import PlaylistVisibilityModal from "./PlaylistVisibilityModal";
 import SpotifyWidget from "./TrackSpotify";
@@ -52,11 +52,13 @@ interface Playlist {
 
 const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
   const [playlists, setPlaylists] = useState<Playlist[]>([]);
-  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(null);
+  const [selectedPlaylist, setSelectedPlaylist] = useState<Playlist | null>(
+    null
+  );
   const [showModal, setShowModal] = useState(false);
   const [user, setUser] = useState<User | null>(null);
   const [showToast, setShowToast] = useState(false);
-  const [toastMessage, setToastMessage] = useState('');
+  const [toastMessage, setToastMessage] = useState("");
 
   useEffect(() => {
     fetchUserProfile();
@@ -65,11 +67,9 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
 
   const fetchUserProfile = async () => {
     try {
-      const response = await axios.get<{ body: User }>("http://localhost:3000/spotify/user/profile", {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      const response = await axios.get<{ body: User }>(
+        "http://localhost:3000/spotify/user/profile"
+      );
       setUser(response.data.body);
     } catch (error) {
       console.error("Failed to fetch user profile:", error);
@@ -78,11 +78,9 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
 
   const handleFetchPlaylists = async () => {
     try {
-      const response = await axios.get<Playlist[]>("http://localhost:3000/spotify/playlists", {
-        headers: {
-          Authorization: `Bearer ${accessToken}`,
-        },
-      });
+      const response = await axios.get<Playlist[]>(
+        "http://localhost:3000/spotify/playlists"
+      );
       setPlaylists(response.data);
     } catch (error) {
       console.error("Failed to fetch playlists:", error);
@@ -112,10 +110,10 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
       setPlaylists(updatedPlaylists);
       setSelectedPlaylist(null);
       setShowModal(false);
-      showToastMessage('Playlist visibility changed successfully!');
+      showToastMessage("Playlist visibility changed successfully!");
     } catch (error) {
       console.error("Failed to toggle playlist visibility:", error);
-      showToastMessage('Failed to toggle playlist visibility');
+      showToastMessage("Failed to toggle playlist visibility");
     }
   };
 
@@ -130,7 +128,20 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
   };
 
   const handleLogout = () => {
-    console.log("Logout");
+    fetch('http://localhost:3000/spotify/logout', {
+      method: 'POST',
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Logout successful');
+        window.open("http://localhost:8100/social/spotify/login");
+      } else {
+        console.error('Failed to logout');
+      }
+    })
+    .catch(error => {
+      console.error('Error logging out:', error);
+    });
   };
 
   const handleOpenInSpotify = (spotifyUrl: string) => {
@@ -146,9 +157,10 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
   return (
     <IonPage>
       <IonHeader>
-                <IonToolbar color="primary">
-
-          <IonTitle>Spotify Playlists - Logged in as: {user?.display_name}</IonTitle>
+        <IonToolbar color="primary">
+          <IonTitle>
+            Spotify Playlists - Logged in as: {user?.display_name}
+          </IonTitle>
           <IonButton slot="end" onClick={handleLogout}>
             <IonIcon slot="icon-only" icon={logOutOutline} />
           </IonButton>
@@ -156,10 +168,12 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         {user && (
           <IonRow>
             <IonCol className="ion-text-center">
-              { user.images.length >0 && <IonImg
-                src={user.images[1].url}
-                style={{ width: "200px", margin: "0 auto", display: "block" }}
-              /> }
+              {user.images.length > 0 && (
+                <IonImg
+                  src={user.images[1].url}
+                  style={{ width: "200px", margin: "0 auto", display: "block" }}
+                />
+              )}
               <IonTitle>{user.display_name}</IonTitle>
               <IonCardSubtitle>
                 {" "}
@@ -167,9 +181,7 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
                 {" - Followers: "} {user.followers.total}
               </IonCardSubtitle>
 
-              <IonButton
-                onClick={() => handleOpenInSpotify(user.uri)}
-              >
+              <IonButton onClick={() => handleOpenInSpotify(user.uri)}>
                 Open in Spotify
               </IonButton>
               <IonButton
@@ -181,7 +193,10 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
               </IonButton>
               <IonButton
                 onClick={() =>
-                  window.open("https://www.spotify.com/uk/account/overview/", "_blank")
+                  window.open(
+                    "https://www.spotify.com/uk/account/overview/",
+                    "_blank"
+                  )
                 }
               >
                 Open Profile Settings
@@ -197,21 +212,25 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         </IonRow>
       </IonHeader>
       <IonContent>
-
         {/* <SpotifyWidget/> */}
 
         <IonList>
           {playlists.map((playlist) => (
             <IonItem key={playlist.id}>
-               <IonImg
-                src={playlist.images[0] ? playlist.images[0].url : 'http://localhost:8100' + '/spotify_logo.png'}
-              
+              <IonImg
+                src={
+                  playlist.images != null
+                    ? playlist.images[0].url
+                    : "http://localhost:8100" + "/spotify_logo.png"
+                }
                 slot="start"
                 style={{ width: "100px" }}
-              /> 
+              />
               <IonLabel>
                 <h1>{playlist.name}</h1>
-                <div dangerouslySetInnerHTML={{ __html: playlist.description }} />
+                <div
+                  dangerouslySetInnerHTML={{ __html: playlist.description }}
+                />
                 <p>Owner: {playlist.owner.display_name}</p>
                 <p>Collaborative: {playlist.collaborative ? "Yes" : "No"}</p>
               </IonLabel>
@@ -245,7 +264,27 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
               <IonButton
                 fill="clear"
                 color="danger"
-                onClick={() => {}}
+                onClick={() => {
+                  fetch(
+                    `http://localhost:3000/spotify/playlist/delete/${playlist.id}`,
+                    {
+                      method: "POST",
+                    }
+                  )
+                    .then((response) => {
+                      if (response.ok) {
+                        console.log("Playlist deleted successfully");
+
+                        fetchUserProfile();
+                        handleFetchPlaylists();
+                      } else {
+                        console.error("Failed to delete playlist");
+                      }
+                    })
+                    .catch((error) => {
+                      console.error("Error deleting playlist:", error);
+                    });
+                }}
               >
                 Delete
               </IonButton>

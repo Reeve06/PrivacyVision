@@ -31,7 +31,7 @@ const PlaylistVisibilityModal: React.FC<Props> = ({ isOpen, playlist, onConfirm,
         {playlist && (
           <>
             <IonImg
-              src={playlist.images[0].url ? playlist.images[0].url : process.env.PUBLIC_URL + '/spotify_logo.png'}
+              src={playlist.images != null ? playlist.images[0].url : "http://localhost:8100" + "/spotify_logo.png"}
               slot="start"
               style={{ width: "50px", height: "50px" }}
             />

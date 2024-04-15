@@ -70,23 +70,12 @@ router.get(
 );
 
 // Logout route
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/");
+router.post("/logout", (req, res) => {
+  req.logout(() => {
+    res.json({ redirectUrl: "http://localhost:8100/social/spotify/login" });
+  });
 });
 
-// Delete playlist route
-router.delete("/playlist/:id", async (req, res) => {
-  try {
-    const playlistId = req.params.id;
-    const data = await spotifyApi.unfollowPlaylist(playlistId);
-
-    res.json({ message: "Playlist deleted successfully" });
-  } catch (error) {
-    console.error("Failed to delete playlist:", error);
-    res.status(500).json({ error: "Failed to delete playlist" });
-  }
-});
 
 // Get user playlists route
 router.get("/playlists", (req, res) => {
@@ -131,6 +120,19 @@ router.get("/user/privacy", async (req, res) => {
   }
 });
 
+// Delete playlist route
+router.post("/playlist/delete/:id", async (req, res) => {
+  try {
+    const playlistId = req.params.id;
+    const data = await spotifyApi.unfollowPlaylist(playlistId);
+
+    res.json({ message: "Playlist deleted successfully" });
+  } catch (error) {
+    console.error("Failed to delete playlist:", error);
+    res.status(500).json({ error: "Failed to delete playlist" });
+  }
+});
+
 // Update playlist visibility route
 router.put("/playlist/:id/visibility", async (req, res) => {
   try {
@@ -138,6 +140,8 @@ router.put("/playlist/:id/visibility", async (req, res) => {
     const { isPublic } = req.body;
 
     const options = { public: isPublic };
+    console.log(options);
+
     const data = await spotifyApi.changePlaylistDetails(playlistId, options);
 
     res.json(data.body);

@@ -1,5 +1,3 @@
-// FacebookPrivacyGuide.tsx
-
 import React from "react";
 import {
   IonButtons,
