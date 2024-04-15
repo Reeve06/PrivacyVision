@@ -7,8 +7,8 @@ const SpotifyWebApi = require("spotify-web-api-node");
 const router = express.Router();
 
 // Spotify API credentials
-const clientId = 'fa7bbc17345f40fb942c10728d8e9099';
-const clientSecret = 'bcffa67579cc47388e9ef904a98fa7f9';
+const clientId = 'f9d99604e1d249d0997375088963c70a';
+const clientSecret = 'f1a5ecdd09bf46ae962d0d774d644925';
 const spotifyApi = new SpotifyWebApi();
 
 // Spotify authentication setup
