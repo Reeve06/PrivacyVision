@@ -7,11 +7,32 @@ import {
   IonListHeader,
   IonMenu,
   IonMenuToggle,
-  IonNote,
 } from '@ionic/react';
 
 import { useLocation } from 'react-router-dom';
-import { logoFacebook, logoTwitter, logoSnapchat, logoInstagram, logoDiscord, logoWhatsapp, logoPlaystation, logoXbox, logoSteam, logoTiktok, lockClosed, lockClosedOutline, key, phonePortrait, pulse, school, thumbsUp, warning, musicalNote} from 'ionicons/icons';
+import {
+  logoFacebook,
+  logoTwitter,
+  logoSnapchat,
+  logoInstagram,
+  logoDiscord,
+  logoWhatsapp,
+  logoPlaystation,
+  logoXbox,
+  logoSteam,
+  logoTiktok,
+  lockClosed,
+  lockClosedOutline,
+  key,
+  phonePortrait,
+  pulse,
+  school,
+  thumbsUp,
+  warning,
+  musicalNote,
+  homeOutline,
+  shieldCheckmarkOutline
+} from 'ionicons/icons';
 import './Menu.css';
 
 interface AppPage {
@@ -20,6 +41,21 @@ interface AppPage {
   mdIcon: string;
   title: string;
 }
+
+const mainPages: AppPage[] = [
+  {
+    title: 'Home Dashboard',
+    url: '/',
+    iosIcon: homeOutline,
+    mdIcon: homeOutline
+  },
+  {
+    title: 'Password Strength & Generator',
+    url: '/security/password',
+    iosIcon: shieldCheckmarkOutline,
+    mdIcon: shieldCheckmarkOutline
+  }
+];
 
 const infoPages: AppPage[] = [
   {
@@ -71,7 +107,6 @@ const infoPages: AppPage[] = [
     mdIcon: school
   }
 ];
-
 
 const socialPages: AppPage[] = [
   {
@@ -127,7 +162,7 @@ const socialPages: AppPage[] = [
 const gamingPages: AppPage[] = [
   {
     title: 'PlayStation',
-    url: '/gaming/playStation',
+    url: '/gaming/playstation',
     iosIcon: logoPlaystation,
     mdIcon: logoPlaystation
   },
@@ -145,56 +180,59 @@ const gamingPages: AppPage[] = [
   }
 ];
 
-
 const Menu: React.FC = () => {
   const location = useLocation();
 
   return (
     <IonMenu contentId="main" type="overlay">
       <IonContent>
-
-      <IonList id="inbox-list">
-          <IonListHeader>Information</IonListHeader>
-          {infoPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
+        <IonList id="main-list">
+          <IonListHeader>Navigation</IonListHeader>
+          {mainPages.map((appPage, index) => (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          ))}
         </IonList>
 
-      <IonList id="inbox-list">
-          <IonListHeader>Socials Medias</IonListHeader>
-          {socialPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
+        <IonList id="info-list">
+          <IonListHeader>Information Guides</IonListHeader>
+          {infoPages.map((appPage, index) => (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          ))}
         </IonList>
 
-        <IonList id="inbox-list">
-          <IonListHeader>Gaming</IonListHeader>
-          {gamingPages.map((appPage, index) => {
-            return (
-              <IonMenuToggle key={index} autoHide={false}>
-                <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
-                  <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
-                  <IonLabel>{appPage.title}</IonLabel>
-                </IonItem>
-              </IonMenuToggle>
-            );
-          })}
+        <IonList id="social-list">
+          <IonListHeader>Social Media Guides</IonListHeader>
+          {socialPages.map((appPage, index) => (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          ))}
         </IonList>
 
+        <IonList id="gaming-list">
+          <IonListHeader>Gaming Guides</IonListHeader>
+          {gamingPages.map((appPage, index) => (
+            <IonMenuToggle key={index} autoHide={false}>
+              <IonItem className={location.pathname === appPage.url ? 'selected' : ''} routerLink={appPage.url} routerDirection="none" lines="none" detail={false}>
+                <IonIcon aria-hidden="true" slot="start" ios={appPage.iosIcon} md={appPage.mdIcon} />
+                <IonLabel>{appPage.title}</IonLabel>
+              </IonItem>
+            </IonMenuToggle>
+          ))}
+        </IonList>
       </IonContent>
     </IonMenu>
   );

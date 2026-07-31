@@ -168,17 +168,17 @@ const PlaylistsPage: React.FC<{ accessToken: string }> = ({ accessToken }) => {
         {user && (
           <IonRow>
             <IonCol className="ion-text-center">
-              {user.images.length > 0 && (
+              {user.images && user.images.length > 0 && (
                 <IonImg
-                  src={user.images[1].url}
+                  src={user.images[1]?.url || user.images[0]?.url}
                   style={{ width: "200px", margin: "0 auto", display: "block" }}
                 />
               )}
               <IonTitle>{user.display_name}</IonTitle>
               <IonCardSubtitle>
                 {" "}
-                Prenium Status: {user.product == "premium" ? "Yes" : "No"}
-                {" - Followers: "} {user.followers.total}
+                Premium Status: {user.product === "premium" ? "Yes" : "No"}
+                {" - Followers: "} {user.followers?.total || 0}
               </IonCardSubtitle>
 
               <IonButton onClick={() => handleOpenInSpotify(user.uri)}>

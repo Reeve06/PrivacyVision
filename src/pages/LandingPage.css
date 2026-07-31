@@ -1,6 +1,32 @@
-.landing-page {
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+.landing-hero {
+  background: linear-gradient(135deg, rgba(56, 128, 255, 0.12) 0%, rgba(112, 68, 255, 0.08) 100%);
+  border-radius: 16px;
+  padding: 32px 24px;
+  margin-bottom: 24px;
+  text-align: center;
 }
 
+.landing-logo {
+  max-width: 140px;
+  height: auto;
+  margin-bottom: 16px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+}
+
+.feature-card {
+  height: 100%;
+  border-radius: 14px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+  color: var(--ion-color-primary);
+}
