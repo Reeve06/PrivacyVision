@@ -15,128 +15,75 @@ import {
 import {
   lockClosedOutline,
   shieldCheckmarkOutline,
-  eyeOffOutline,
 } from "ionicons/icons";
 
 const TwoFactorAuthPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonToolbar color="primary">
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
-          </IonButtons>{" "}
-          <IonTitle>Two-Factor Authentication 2FA</IonTitle>
+          </IonButtons>
+          <IonTitle>Two-Factor Authentication (2FA)</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>
-            <IonIcon icon={lockClosedOutline} slot="start" />
-            <IonLabel>
-              <h2>
-                <IonTitle>Two-Factor Authentication 2FA</IonTitle>
+      <IonContent fullscreen className="ion-padding">
+        <IonList style={{ borderRadius: "12px" }}>
+          <IonItem lines="none">
+            <IonIcon icon={lockClosedOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "bold", margin: "8px 0" }}>
+                Understanding Two-Factor Authentication
               </h2>
-              <p> <IonTitle> Two-Factor Authentication (2FA), 
-                  also known as multi-factor authentication (MFA) or two-step verification, 
-                  is a security mechanism that requires two separate forms of identification 
-                  before granting access to an account or service. The goal is to enhance 
-                  security beyond relying solely on a password.
-                  </IonTitle>
-              </p>
-              <p>
-                <IonTitle>
-                  <strong>Why It Matters:</strong>                 
-                </IonTitle>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "12px" }}>
+                Why It Matters:
               </p>
               <ul>
                 <li>
-                  <IonTitle>
-                  2FA adds an extra layer of security by requiring a second verification step, like a code sent to your phone, after entering your password.
-                  </IonTitle>
+                  <strong>Defense in Depth: </strong>
+                  2FA requires two distinct factors (something you know + something you have) before authenticating, rendering stolen passwords useless on their own.
                 </li>
                 <li>
-                  <IonTitle>
-                  Enhanced Security: By combining two factors, 2FA provides a more robust defense against unauthorised access.
-                   It ensures that even if someone obtains your password, they still need an additional piece of information to gain entry
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Mitigating Password Vulnerabilities: Traditional passwords can be compromised due to weak choices, 
-                  reuse, or data breaches. 2FA mitigates these vulnerabilities by adding an extra layer of verification.
-                  </IonTitle>
-                </li>
-              </ul>
-              <p>
-                <IonTitle>
-                  <strong>Action:</strong>
-                </IonTitle>
-              </p>
-              <ul>
-                <li>
-                  <IonTitle>
-                  <strong> Mobile Apps:</strong>                  
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Use your mobile device to generate unique codes (tokens).                   
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  These codes are sent via SMS and verified on websites or apps.
-                  </IonTitle>
-                </li>
-              </ul>
-              <p>
-                <IonTitle>
-                  <strong>Advantages:</strong>
-                </IonTitle>
-              </p>
-              <ul>
-                <li>
-                  <IonTitle>
-                  No need for a separate hardware token generator.                 
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Passcode generators are efficient and secure.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Max passcode entry prevents hacking
-                  </IonTitle>
+                  <strong>Mitigating Breach Exposure: </strong>
+                  Even if your credentials leak in a third-party breach, 2FA prevents unauthorized account entry.
                 </li>
               </ul>
 
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "16px" }}>
+                Recommended Setup:
+              </p>
+              <ul>
+                <li><strong>Authenticator Apps: </strong>Use TOTP apps like Google Authenticator or Authy over SMS codes.</li>
+                <li><strong>Hardware Keys: </strong>Consider FIDO2/YubiKey security tokens for ultra-high security accounts.</li>
+                <li><strong>Backup Codes: </strong>Store emergency recovery codes securely offline.</li>
+              </ul>
             </IonLabel>
           </IonItem>
-          <IonItem>
-            <IonIcon icon={shieldCheckmarkOutline} slot="start" />
-            <IonLabel>
-              <h3>
-                <IonTitle>YouTube Links:</IonTitle>
+
+          <IonItem lines="none" style={{ marginTop: "24px" }}>
+            <IonIcon icon={shieldCheckmarkOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "16px" }}>
+                Educational Video Guides:
               </h3>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/AMOtB7XkTT4?si=2FqplY3ov6WQlmJ2"
-                title="What is Two-Factor Authentication (2FA)?"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/2ZLnBx8Mm40?si=6JocGliH9vxLT21i"
-                title="How to Enable 2FA on Different Platforms"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <div className="video-container" style={{ marginBottom: "16px" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/AMOtB7XkTT4?si=2FqplY3ov6WQlmJ2"
+                  title="What is Two-Factor Authentication?"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/2ZLnBx8Mm40?si=6JocGliH9vxLT21i"
+                  title="How to Enable 2FA on Platforms"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </IonLabel>
           </IonItem>
         </IonList>

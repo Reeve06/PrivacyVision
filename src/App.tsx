@@ -1,11 +1,11 @@
+import React from "react";
 import {
   IonApp,
   IonRouterOutlet,
   IonSplitPane,
   setupIonicReact,
 } from "@ionic/react";
-import { IonReactRouter } from "@ionic/react-router";
-import { Redirect, Route } from "react-router-dom";
+import { HashRouter, Route, Redirect } from "react-router-dom";
 import Menu from "./components/Menu";
 
 /* Core CSS required for Ionic components to work properly */
@@ -16,7 +16,7 @@ import "@ionic/react/css/normalize.css";
 import "@ionic/react/css/structure.css";
 import "@ionic/react/css/typography.css";
 
-/* Optional CSS utils that can be commented out */
+/* Optional CSS utils */
 import "@ionic/react/css/padding.css";
 import "@ionic/react/css/float-elements.css";
 import "@ionic/react/css/text-alignment.css";
@@ -26,6 +26,8 @@ import "@ionic/react/css/display.css";
 
 /* Theme variables */
 import "./theme/variables.css";
+import "./pages/Page.css";
+
 import PrivacyPage from "./pages/information/PrivacyPage";
 import ReputationManagementPage from "./pages/information/ReputationManagementPage";
 import CounteractCrowdingPage from "./pages/information/CounteractCrowdingPage";
@@ -54,19 +56,18 @@ setupIonicReact();
 const App: React.FC = () => {
   return (
     <IonApp>
-      <IonReactRouter>
+      <HashRouter>
         <IonSplitPane contentId="main">
-          {<Menu />}
+          <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
               <LandingPage />
             </Route>
 
-            {/* Info Pages */}
+            {/* Information Guides */}
             <Route path="/privacy" exact={true}>
               <PrivacyPage />
             </Route>
-
             <Route path="/reputation-management" exact={true}>
               <ReputationManagementPage />
             </Route>
@@ -89,61 +90,56 @@ const App: React.FC = () => {
               <EducationPage />
             </Route>
 
-            <Route path="/social/spotify/login" exact={true}>
-              <LoginSpotify />
-            </Route>
-
-            <Route path="/social/spotify/playlists" exact={true}>
-              <PlaylistsPage accessToken={""} />
-            </Route>
-
+            {/* Security Tools */}
             <Route path="/security/password" exact={true}>
               <PasswordStrengthPage />
             </Route>
 
+            {/* Social Media Guides */}
+            <Route path="/social/spotify/login" exact={true}>
+              <LoginSpotify />
+            </Route>
+            <Route path="/social/spotify/playlists" exact={true}>
+              <PlaylistsPage accessToken={""} />
+            </Route>
             <Route path="/social/facebook" exact={true}>
               <FacebookPrivacyGuide />
             </Route>
-
             <Route path="/social/snapchat" exact={true}>
               <SnapChat />
             </Route>
-
             <Route path="/social/discord" exact={true}>
               <DiscordPrivacyGuide />
             </Route>
-
             <Route path="/social/tiktok" exact={true}>
               <TikTokPrivacyGuide />
             </Route>
-
             <Route path="/social/twitter" exact={true}>
               <TwitterPrivacyGuide />
             </Route>
-
             <Route path="/social/instagram" exact={true}>
               <InstagramPrivacyGuide />
             </Route>
-
             <Route path="/social/whatsapp" exact={true}>
               <WhatsAppPrivacyGuide />
             </Route>
 
+            {/* Gaming Guides */}
             <Route path="/gaming/xbox" exact={true}>
               <XboxPrivacyGuide />
             </Route>
-
             <Route path="/gaming/playstation" exact={true}>
               <PlaystationPrivacyGuide />
             </Route>
-
             <Route path="/gaming/steam" exact={true}>
               <SteamPrivacyGuide />
             </Route>
-            
+
+            {/* Fallback Catch-all Route */}
+            <Route render={() => <Redirect to="/" />} />
           </IonRouterOutlet>
         </IonSplitPane>
-      </IonReactRouter>
+      </HashRouter>
     </IonApp>
   );
 };

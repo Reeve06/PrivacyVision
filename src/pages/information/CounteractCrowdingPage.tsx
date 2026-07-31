@@ -13,11 +13,10 @@ import {
   IonMenuButton,
 } from "@ionic/react";
 import {
-  lockClosedOutline,
+  pulseOutline,
   shieldCheckmarkOutline,
-  eyeOffOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
+
 const CounteractCrowdingPage: React.FC = () => {
   return (
     <IonPage>
@@ -26,62 +25,55 @@ const CounteractCrowdingPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Counteract Crowding and Fatigue</IonTitle>
+          <IonTitle>Counteract Crowding & Fatigue</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonList>
+      <IonContent fullscreen className="ion-padding">
+        <IonList style={{ borderRadius: "12px" }}>
           <IonItem lines="none">
-            <IonIcon icon={lockClosedOutline} slot="start" />
-            <IonLabel>
-            <IonTitle> <h2>Counteract Crowding and Fatigue</h2></IonTitle>
-              <p><IonTitle>
-                <strong>Why It Matters:</strong></IonTitle>
+            <IonIcon icon={pulseOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "bold", margin: "8px 0" }}>
+                Managing Digital Overload and Social Fatigue
+              </h2>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "12px" }}>
+                Why It Matters:
               </p>
               <ul>
                 <li>
-                <IonTitle><strong>Information Overload:</strong>
-                  Challenge: Constant exposure to content can lead to information overload and overwhelm.
-                  Solution: Curate your feeds by unfollowing accounts that contribute to this overload or negativity.</IonTitle>
+                  <strong>Information Overload: </strong>
+                  Continuous notification streams and dense feeds cause cognitive fatigue. Curating your network reduces noise.
                 </li>
                 <li>
-                <IonTitle><strong>Personalised Advertising:</strong>
-                  Challenge: Social media platforms leverage your data for targeted advertising, which can feel intrusive.
-                  Solution: Utilise privacy settings to manage the type of targeted ads you see. Take control of your online experience.
-                </IonTitle>
+                  <strong>Personalized Advertising: </strong>
+                  Aggressive algorithmic ad tracking can feel intrusive. Adjusting ad data sharing controls your experience.
                 </li>
                 <li>
-                <IonTitle><strong>Echo Chambers:</strong>
-                  Challenge: Algorithms expose you mainly to content that reinforces your existing beliefs, limiting your perspective.
-                  Solution: Break free from echo chambers by diversifying your online experience.</IonTitle>
+                  <strong>Echo Chambers: </strong>
+                  Recommendation systems isolate users inside confirmation loops. Diversifying sources broadens perspective.
                 </li>
               </ul>
-              <p>
-              <IonTitle><strong>Action:</strong></IonTitle>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "16px" }}>
+                Action Steps:
               </p>
               <ul>
-                <li>
-                <IonTitle><strong>Curate Your Feeds:</strong>
-                Unfollow Accounts: Identify accounts that contribute to information overload or negativity. Unfollow them to reduce clutter and maintain a more balanced feed. </IonTitle>
-                </li>
-                <li>
-                <IonTitle> Targeted Ads: Adjust privacy settings on social media platforms to manage the type of ads you encounter.</IonTitle>
-                </li>
-                <li>
-                <IonTitle>Offline Activities: Take breaks from social media. Engage in offline activities to recharge and gain fresh perspectives.
-                Explore Different Platforms: Venture beyond your usual platforms. Explore different online spaces to broaden your understanding and avoid echo chambers.</IonTitle>
-                </li>
+                <li><strong>Curate Your Feed: </strong>Unfollow or mute channels that induce stress or negativity.</li>
+                <li><strong>Adjust Ad Preferences: </strong>Opt out of third-party behavior tracking across social platforms.</li>
+                <li><strong>Schedule Offline Breaks: </strong>Establish daily digital detox windows for mental clarity.</li>
               </ul>
             </IonLabel>
           </IonItem>
-          <IonItem lines="none">
-            <IonIcon icon={shieldCheckmarkOutline} slot="start" />
-            <IonLabel>
-            <IonTitle> <h3>YouTube Links:</h3></IonTitle>
-              <div className="video-container">
+
+          <IonItem lines="none" style={{ marginTop: "24px" }}>
+            <IonIcon icon={shieldCheckmarkOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "16px" }}>
+                Educational Video Resources:
+              </h3>
+              <div className="video-container" style={{ marginBottom: "16px" }}>
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/sJdZ7kmA2QQ?si=T0eiL0srHQSQ6yZE"
                   title="Digital Minimalism Explained"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -90,10 +82,8 @@ const CounteractCrowdingPage: React.FC = () => {
               </div>
               <div className="video-container">
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/jzhKgcmbjCA?si=mfVe5NyjdbwOj6yA"
-                  title="How to Escape the Social Media Echo Chamber"
+                  title="Escaping Echo Chambers"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>

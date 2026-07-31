@@ -13,112 +13,77 @@ import {
   IonMenuButton,
 } from "@ionic/react";
 import {
-  lockClosedOutline,
+  warningOutline,
   shieldCheckmarkOutline,
-  eyeOffOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
 
 const SuspiciousLinksPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonToolbar color="primary">
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
-          </IonButtons>{" "}
+          </IonButtons>
           <IonTitle>Avoid Suspicious Links</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>
-            <IonIcon icon={lockClosedOutline} slot="start" />
-            <IonLabel>
-              <h2>
-                <IonTitle>Avoid Suspicious Links</IonTitle>
+      <IonContent fullscreen className="ion-padding">
+        <IonList style={{ borderRadius: "12px" }}>
+          <IonItem lines="none">
+            <IonIcon icon={warningOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-warning)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "bold", margin: "8px 0" }}>
+                Detecting Phishing Scams & Malicious URLs
               </h2>
-              <p>
-                <IonTitle>
-                  <strong>Why It Matters:</strong>
-                </IonTitle>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "12px" }}>
+                Why It Matters:
               </p>
               <ul>
                 <li>
-                  <IonTitle>
-                  Phishing Attempts: Malicious links often lead to fake websites that impersonate legitimate services 
-                  (like banks or email providers). These sites trick you into revealing sensitive information, 
-                  such as passwords or credit card details.
-                  </IonTitle>
+                  <strong>Phishing Spoofing: </strong>
+                  Attackers craft lookalike login portals to harvest passwords and banking credentials.
                 </li>
                 <li>
-                  <IonTitle>
-                  Malware Infections: Clicking a harmful link can download malware onto your device.
-                   Malware can steal your data, damage files, or even take control of your system.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Website Redirects: Some links redirect you to fraudulent websites or pop-ups. 
-                  These sites may prompt you to install malicious software or enter personal information.
-                  </IonTitle>
+                  <strong>Drive-by Malware Downloads: </strong>
+                  Clicking unverified links can trigger background malware payloads or ransomware.
                 </li>
               </ul>
-              <p>
-                <IonTitle>
-                  <strong>Protective Actions:</strong>
-                </IonTitle>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "16px" }}>
+                Protective Measures:
               </p>
               <ul>
-                <li>
-                  <IonTitle>
-                  View before clicking: When you receive an email or message with a link, hover your cursor over it. 
-                  The actual URL will appear (usually at the bottom left of your screen). Verify that it matches the expected domain.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Avoid shortened links: Be cautious with shortened URLs (like bit.ly).
-                   They hide the true destination. If you’re unsure, don’t click.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Verify Unsolicited Links: Even if a link seems to come 
-                  from a familiar source (like a friend or colleague), exercise caution.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Contact the sender: Before clicking, verify with the sender that they intentionally shared the link. 
-                  Cybercriminals can compromise accounts and send malicious messages.
-                  </IonTitle>
-                </li>
+                <li><strong>Inspect Hover Destinations: </strong>Hover over links to verify the underlying destination domain matches the official host.</li>
+                <li><strong>Beware Shortened Links: </strong>Use URL expanders on shortened links (`bit.ly`, `tinyurl`) before opening.</li>
+                <li><strong>Verify Sender Identity: </strong>Confirm suspicious links out-of-band directly with the sender.</li>
               </ul>
             </IonLabel>
           </IonItem>
-          <IonItem>
-            <IonIcon icon={shieldCheckmarkOutline} slot="start" />
-            <IonLabel>
-              <h3>
-                <IonTitle>YouTube Links:</IonTitle>
+
+          <IonItem lines="none" style={{ marginTop: "24px" }}>
+            <IonIcon icon={shieldCheckmarkOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "16px" }}>
+                Educational Video Guides:
               </h3>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/o0btqyGWIQw?si=Fy2VpN7ysSiNcytz"
-                title="How to Spot Phishing Emails"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/aO858HyFbKI?si=rouB586lhiUTLy2d"
-                title="Staying Safe Online: Avoiding Phishing Scams"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <div className="video-container" style={{ marginBottom: "16px" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/o0btqyGWIQw?si=Fy2VpN7ysSiNcytz"
+                  title="How to Spot Phishing Emails"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/aO858HyFbKI?si=rouB586lhiUTLy2d"
+                  title="Avoiding Phishing Scams"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </IonLabel>
           </IonItem>
         </IonList>

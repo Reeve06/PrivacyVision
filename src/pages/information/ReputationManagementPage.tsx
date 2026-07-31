@@ -13,10 +13,10 @@ import {
   IonMenuButton,
 } from "@ionic/react";
 import {
-  lockClosedOutline,
+  thumbsUpOutline,
   shieldCheckmarkOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
+
 const ReputationManagementPage: React.FC = () => {
   return (
     <IonPage>
@@ -25,65 +25,63 @@ const ReputationManagementPage: React.FC = () => {
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
-          <IonTitle>Reputation Mangement</IonTitle>
+          <IonTitle>Reputation Management</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonList>
+      <IonContent fullscreen className="ion-padding">
+        <IonList style={{ borderRadius: "12px" }}>
           <IonItem lines="none">
-            <IonIcon icon={lockClosedOutline} slot="start" />
-            <IonLabel>
-            <IonTitle><h2>Reputation Management</h2></IonTitle>
-              <p>
-              <IonTitle> <strong>Why It Matters:</strong></IonTitle>
+            <IonIcon icon={thumbsUpOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "bold", margin: "8px 0" }}>
+                Managing Your Online Reputation
+              </h2>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "12px" }}>
+                Why It Matters:
               </p>
               <ul>
                 <li>
-                <IonTitle>	Potential employers: Social media profiles
-                   are often screened by potential employers, 
-                  and inappropriate content can hurt your chances.</IonTitle>
+                  <strong>Potential Employers: </strong>
+                  Social media profiles are frequently screened during hiring processes. Inappropriate or unprofessional posts can harm job prospects.
                 </li>
                 <li>
-                <IonTitle>Relationships: Posts can create misunderstandings or offend others, damaging relationships.</IonTitle>
+                  <strong>Personal & Professional Relationships: </strong>
+                  Misinterpreted posts can cause unnecessary misunderstandings or offend peers and contacts.
                 </li>
                 <li>
-                <IonTitle>Personal brand: Social media is an extension of your personal brand, and consistent, positive content reflects well on you.</IonTitle>
+                  <strong>Personal Brand: </strong>
+                  Your online presence is a direct extension of your personal brand. Positive, respectful content creates lasting credibility.
                 </li>
               </ul>
-              <p>
-              <IonTitle><strong>Action:</strong></IonTitle>
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "16px" }}>
+                Action Steps:
               </p>
               <ul>
-                <li>
-                <IonTitle> Be mindful of your posts: Consider the potential impact of your content before sharing.</IonTitle>
-                </li>
-                <li>
-                <IonTitle> Review past posts: Regularly review and delete old posts that might not reflect your current self or goals.</IonTitle>
-                </li>
-                <li>
-                <IonTitle>Maintain privacy for sensitive content: Share personal experiences with close friends and family using private groups or messages.</IonTitle>
-                </li>
+                <li><strong>Think Before Posting: </strong>Pause and evaluate the long-term impact of your updates and photos.</li>
+                <li><strong>Audit Old Content: </strong>Periodically review and prune outdated posts that no longer represent your values.</li>
+                <li><strong>Use Audience Controls: </strong>Restrict personal or sensitive posts to verified close friends and family.</li>
               </ul>
             </IonLabel>
           </IonItem>
-          <IonItem lines="none">
-            <IonIcon icon={shieldCheckmarkOutline} slot="start" />
-            <IonLabel>
-            <IonTitle> <h3>YouTube Links:</h3></IonTitle>
-              <div className="video-container">
+
+          <IonItem lines="none" style={{ marginTop: "24px" }}>
+            <IonIcon icon={shieldCheckmarkOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "16px" }}>
+                Educational Video Resources:
+              </h3>
+              <div className="video-container" style={{ marginBottom: "16px" }}>
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/D7A-yYztCig?si=Iwl3xUgC1IZefP7a"
-                  title="The Dark Side of Social Media - Impact on Our Livesn"
+                  title="Impact of Social Media on Reputation"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
               <div className="video-container">
                 <iframe
-                  width="560"
-                  height="315"
                   src="https://www.youtube.com/embed/7_iVgqgXzi8?si=_ANEkAiYmV569aMg"
                   title="Managing Your Online Reputation"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

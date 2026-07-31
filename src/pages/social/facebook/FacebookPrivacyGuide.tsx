@@ -8,14 +8,13 @@ import {
   IonTitle,
   IonToolbar,
   IonCard,
-  IonCardHeader,
   IonCardContent,
   IonButton,
-  IonImg,
   IonRow,
   IonCol,
-  IonCardTitle,
+  IonIcon
 } from "@ionic/react";
+import { openOutline, shieldCheckmarkOutline } from "ionicons/icons";
 import SafetyPoint from "../../../components/SafetyPoint";
 
 const FacebookPrivacyGuide: React.FC = () => {
@@ -30,8 +29,7 @@ const FacebookPrivacyGuide: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-                <IonToolbar color="primary">
-
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
           </IonButtons>
@@ -39,16 +37,25 @@ const FacebookPrivacyGuide: React.FC = () => {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent fullscreen>
-        <IonCard>
+      <IonContent fullscreen className="ion-padding">
+        <IonCard style={{ borderRadius: "12px", marginBottom: "20px" }}>
           <IonCardContent>
-            <IonRow>
-              <IonCol size="12">
-                <IonButton color={"danger"} onClick={openFacebookHelpCenter}>
-                  Visit Facebook Help Center
+            <IonRow className="ion-align-items-center">
+              <IonCol size="12" size-md="8">
+                <h3 style={{ fontSize: "1.1rem", fontWeight: 600, margin: "0 0 4px 0" }}>
+                  Official Facebook Privacy Resources
+                </h3>
+                <p style={{ margin: 0, color: "var(--ion-color-medium-shade)", fontSize: "0.95rem" }}>
+                  Direct links to official Facebook security documentation and policy settings.
+                </p>
+              </IonCol>
+              <IonCol size="12" size-md="4" className="ion-text-right">
+                <IonButton color="primary" onClick={openFacebookHelpCenter} style={{ marginRight: "8px" }}>
+                  <IonIcon icon={openOutline} slot="start" />
+                  Help Center
                 </IonButton>
-                <IonButton color={"danger"} onClick={openFacebookDataPolicy}>
-                  Facebook Data Policy
+                <IonButton color="primary" fill="outline" onClick={openFacebookDataPolicy}>
+                  Data Policy
                 </IonButton>
               </IonCol>
             </IonRow>
@@ -63,62 +70,44 @@ const FacebookPrivacyGuide: React.FC = () => {
 
         <SafetyPoint
           title="Privacy Basics"
-          description="Adjust settings for who can see your future posts, review your posts and things you're tagged in, limit the audience for your shared posts, manage friend requests, and control who can look you up using your email address or phone number. These settings help you control your online privacy and who can interact with you on Facebook."
+          description="Adjust settings for who can see your future posts, review your posts and things you're tagged in, limit the audience for your shared posts, manage friend requests, and control who can look you up using your email address or phone number."
           theImage="https://cdn-icons-png.flaticon.com/512/3973/3973952.png"
         />
 
         <SafetyPoint
           title="Timeline and Tagging"
-          description="Manage settings for who can post on your timeline, who can tag you in posts, review posts you're tagged in before they appear on your timeline, and control who can see posts you've been tagged in. These settings help you manage your online presence and control what others can share about you on Facebook."
+          description="Manage settings for who can post on your timeline, who can tag you in posts, review posts you're tagged in before they appear on your timeline, and control who can see posts you've been tagged in."
           theImage="https://th.bing.com/th/id/OIP.xkLyNSpL6zRdeW6r8sGLBwHaHa?rs=1&pid=ImgDetMain"
         />
 
         <SafetyPoint
-          title="Face Recognition"
-          description="Choose whether Facebook can recognize you in photos and videos. This feature uses facial recognition technology to identify you in images and videos uploaded to Facebook. You can choose to enable or disable this feature based on your privacy preferences."
+          title="Face Recognition & Biometrics"
+          description="Choose whether Facebook can recognize you in photos and videos. This feature uses facial recognition technology to identify you in images uploaded to Facebook."
           theImage="https://th.bing.com/th/id/OIP.YX9M-1pAe_O3MWTr-L_hdAHaHa?rs=1&pid=ImgDetMain"
         />
 
         <SafetyPoint
-          title="Blocking"
-          description="Manage settings for blocking users, app invites, event invites, and more. If you encounter unwanted interactions or content on Facebook, you can block specific users or prevent certain types of notifications. This helps you control your online experience and protect yourself from harassment or unwanted attention."
+          title="Blocking & Harassment Prevention"
+          description="Manage settings for blocking users, app invites, and unwanted event invites. If you encounter unwanted interactions, block specific users to prevent further contact."
           theImage="https://static.thenounproject.com/png/1203371-200.png"
         />
 
         <SafetyPoint
-          title="Location"
-          description="Adjust settings for location services and location history. Facebook may collect location data from your device to provide location-based features, such as check-ins and location-based ads. You can control whether Facebook has access to your precise location and manage your location history through these settings."
+          title="Location Tracking Permissions"
+          description="Adjust settings for location services and location history. Facebook may collect location data from your device for check-ins and ads. You can control location permissions directly."
           theImage="https://th.bing.com/th/id/OIP.0QNsrqfl7QR_JBTb1GQ0EgHaHa?rs=1&pid=ImgDetMain"
         />
 
         <SafetyPoint
-          title="Notifications"
-          description="Customize settings for various notification types. Facebook sends notifications for various activities, such as friend requests, comments on your posts, and upcoming events. You can customize which notifications you receive and how you receive them to manage your notification preferences."
-          theImage="https://th.bing.com/th/id/OIP.DRS0UT5PK3um0iHhT6wEQwHaHa?rs=1&pid=ImgDetMain"
-        />
-
-        <SafetyPoint
-          title="Mobile"
-          description="Manage settings for Facebook on your mobile device. The Facebook mobile app may have additional settings and features compared to the desktop version. You can manage your account settings, notification preferences, and privacy settings directly from the Facebook mobile app."
-          theImage="https://cdn0.iconfinder.com/data/icons/popular-social-media-colored/48/JD-05-512.png"
-        />
-
-        <SafetyPoint
-          title="Apps and Websites"
-          description="Review and manage settings for apps connected to your Facebook account. Many third-party apps and websites allow you to sign in using your Facebook credentials or access your Facebook data. You can review and manage the permissions granted to these apps and websites to control how they access your information."
+          title="Third-Party Apps and Websites"
+          description="Review and manage settings for apps connected to your Facebook account. Many third-party apps allow Facebook login. Revoke permissions for inactive apps regularly."
           theImage="https://th.bing.com/th/id/R.ba42534570fe1c78724444c03a33f4e1?rik=tqhAnj0MMND8RQ&pid=ImgRaw&r=0"
         />
 
         <SafetyPoint
-          title="Ads"
-          description="Adjust settings for ad preferences, ad settings, and your information used for ads. Facebook uses your activity and interests to show you targeted ads. You can manage your ad preferences, control which information is used for ads, and customize the types of ads you see on Facebook."
+          title="Ad Preference Customization"
+          description="Adjust settings for ad preferences and your information used for targeted ads. Control which profile attributes and online activities influence advertising algorithms."
           theImage="https://socioblend.com/blog/wp-content/uploads/2016/01/10-facebook-ads-you-should-be-running-right-now.jpg"
-        />
-
-        <SafetyPoint
-          title="Facebook Privacy Policy"
-          description="Review the Facebook Data Policy. The Facebook Data Policy outlines how Facebook collects, uses, and shares your information. By reviewing the data policy, you can understand how your data is handled on Facebook and make informed decisions about your privacy settings."
-          theImage="https://icon-library.com/images/privacy-policy-icon/privacy-policy-icon-6.jpg"
         />
       </IonContent>
     </IonPage>

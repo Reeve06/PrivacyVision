@@ -13,136 +13,85 @@ import {
   IonMenuButton,
 } from "@ionic/react";
 import {
-  lockClosedOutline,
+  keyOutline,
   shieldCheckmarkOutline,
-  eyeOffOutline,
 } from "ionicons/icons";
-import Menu from "../../components/Menu";
 import PasswordStrengthPage from "../PasswordChecker";
 
 const StrongPasswordsPage: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
-      <IonToolbar color="primary">
+        <IonToolbar color="primary">
           <IonButtons slot="start">
             <IonMenuButton />
-          </IonButtons>{" "}
-          <IonTitle>Strong Passwords</IonTitle>
+          </IonButtons>
+          <IonTitle>Strong Passwords Guide</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItem>
-            <IonIcon icon={lockClosedOutline} slot="start" />
-            <IonLabel>
-              <h2>
-                <IonTitle>Strong Passwords</IonTitle>
-                
+      <IonContent fullscreen className="ion-padding">
+        <IonList style={{ borderRadius: "12px", marginBottom: "24px" }}>
+          <IonItem lines="none">
+            <IonIcon icon={keyOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h2 style={{ fontSize: "1.3rem", fontWeight: "bold", margin: "8px 0" }}>
+                Creating & Managing High-Security Passwords
               </h2>
-              <p>
-                <IonTitle>
-                  <strong>Why It Matters:</strong>
-                </IonTitle>
-              </p>
-              <ul>
-                <li>
-                  <IonTitle>
-                  Weak or reused passwords pose significant risks to your digital security. Here’s why strong passwords are crucial:
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Protection Against Hacking: Hackers often exploit predictable passwords. A strong password acts as a formidable barrier against unauthorised access.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Data and Account Security: Robust passwords safeguard your sensitive information,
-                   including personal data, financial details, and communication.
-                  </IonTitle>
-                </li>
-              </ul>
-              <p>
-                <IonTitle>
-                  <strong>Actions for Creating Strong Passwords:</strong>
-                </IonTitle>
-              </p>
-              <ul>
-                <li>
-                  <IonTitle>
-                  Mix Characters: Combine uppercase and lowercase letters, numbers, and special symbols (e.g., @, #, $).
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Avoid Predictability: Refrain from using easily guessable patterns like “123456” or “password.”
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Avoid Personal Information:                 
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Birthdays or Names: Never include personal details like birthdays, names, or family member names.
-                  </IonTitle>
-                </li>  
-                 <li>
-                  <IonTitle>
-                  Common Words: Avoid dictionary words or phrases.
-                  </IonTitle>
-                </li>
-                <li>
-                  <IonTitle>
-                  Password Manager Consideration:
-                  </IonTitle>
-                </li>
 
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "12px" }}>
+                Why It Matters:
+              </p>
+              <ul>
                 <li>
-                  <IonTitle>               
-                  Use a Password Manager: Tools like LastPass, 1Password, 
-                  or the built-in password manager in Google Chrome securely store and manage your passwords.
-                  </IonTitle>
+                  <strong>Hacking Prevention: </strong>
+                  Automated dictionary attacks breach simple passwords in seconds. High complexity delays brute force attempts indefinitely.
+                </li>
+                <li>
+                  <strong>Credential Reuse Risks: </strong>
+                  Reusing a single password across sites exposes all your accounts if any single service suffers a data breach.
                 </li>
               </ul>
-             
+
+              <p style={{ fontWeight: "bold", color: "var(--ion-color-dark)", marginTop: "16px" }}>
+                Key Guidelines:
+              </p>
+              <ul>
+                <li><strong>Mix Characters: </strong>Combine uppercase/lowercase letters, numbers, and special symbols (`!@#$%^&*`).</li>
+                <li><strong>Avoid Personal Context: </strong>Never include birth dates, names, or dictionary words.</li>
+                <li><strong>Use a Password Manager: </strong>Store complex passphrases in encrypted vaults (e.g. Bitwarden, 1Password).</li>
+              </ul>
             </IonLabel>
           </IonItem>
-          <IonItem>
-            <IonIcon icon={shieldCheckmarkOutline} slot="start" />
-            <IonLabel>
-              <h3>
-                <IonTitle>YouTube Links:</IonTitle>
+
+          <IonItem lines="none" style={{ marginTop: "16px" }}>
+            <IonIcon icon={shieldCheckmarkOutline} slot="start" style={{ fontSize: "2rem", color: "var(--ion-color-primary)" }} />
+            <IonLabel className="ion-text-wrap">
+              <h3 style={{ fontSize: "1.2rem", fontWeight: "bold", marginBottom: "16px" }}>
+                Educational Video Guides:
               </h3>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/TvrFpAFitQ0?si=CybBMbWYDON0-XkO"
-                title="Password Basics: How to Create a Strong Password"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/3-vn3vcfi2M?si=tE4tIUkQ0lfuJON5"
-                title="Password Manager Overview"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+              <div className="video-container" style={{ marginBottom: "16px" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/TvrFpAFitQ0?si=CybBMbWYDON0-XkO"
+                  title="How to Create a Strong Password"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/3-vn3vcfi2M?si=tE4tIUkQ0lfuJON5"
+                  title="Password Managers Explained"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </IonLabel>
           </IonItem>
-
-         
         </IonList>
- 
-        <PasswordStrengthPage/>  
 
- 
+        {/* Embedded Interactive Password Tools */}
+        <PasswordStrengthPage />
       </IonContent>
-       
     </IonPage>
   );
 };
