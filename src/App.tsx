@@ -5,7 +5,8 @@ import {
   IonSplitPane,
   setupIonicReact,
 } from "@ionic/react";
-import { HashRouter, Route, Redirect } from "react-router-dom";
+import { IonReactRouter } from "@ionic/react-router";
+import { Route, Redirect } from "react-router-dom";
 import Menu from "./components/Menu";
 
 /* Core CSS required for Ionic components to work properly */
@@ -53,10 +54,14 @@ import SteamPrivacyGuide from "./pages/gaming/SteamPrivacyGuide";
 
 setupIonicReact();
 
+const getBasename = () => {
+  return window.location.pathname.startsWith('/PrivacyVision') ? '/PrivacyVision' : '';
+};
+
 const App: React.FC = () => {
   return (
     <IonApp>
-      <HashRouter>
+      <IonReactRouter basename={getBasename()}>
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
@@ -139,7 +144,7 @@ const App: React.FC = () => {
             <Route render={() => <Redirect to="/" />} />
           </IonRouterOutlet>
         </IonSplitPane>
-      </HashRouter>
+      </IonReactRouter>
     </IonApp>
   );
 };
